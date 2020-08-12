@@ -1,0 +1,1 @@
+25.K8S-Kubernetes_StatefullSets

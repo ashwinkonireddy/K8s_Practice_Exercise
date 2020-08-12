@@ -2,5 +2,5 @@
 
 for entry in $(cat file.txt)
 do
-  touch "$entry"/README.md 
+  echo $entry > "$entry"/README.md 
 done
