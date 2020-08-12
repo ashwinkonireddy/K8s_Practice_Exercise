@@ -2,5 +2,5 @@
 
 for entry in $(cat file.txt)
 do
-  mkdir "$entry"
+  touch "$entry"/README.md 
 done
