@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: testing
+spec: {}
+status: {}
+paramName:
+  Description: 
+  Type: List<AWS::EC2::VPC::Id>
+  Default: 

@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: testing
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: testdeploy
+  name: testdeploy
+  namespace: testing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: testdeploy
+      app: nginx
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: testdeploy
+        app: nginx
+    spec:
+      containers:
+      - image: sreeharshav/rollingupdate:v4
+        name: testdeploy
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+  

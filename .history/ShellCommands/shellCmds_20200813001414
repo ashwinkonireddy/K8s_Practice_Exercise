@@ -1,0 +1,2 @@
+//to find the linux architecture
+dpkg --print-architecture
